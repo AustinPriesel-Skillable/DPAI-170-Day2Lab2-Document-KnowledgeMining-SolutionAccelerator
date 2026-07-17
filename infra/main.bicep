@@ -977,6 +977,7 @@ module managedCluster 'br/public:avm/res/container-service/managed-cluster:0.13.
       {
         name: 'agentpool'
         vmSize: 'Standard_D4ds_v5'
+        availabilityZones: []
         count: 2
         osType: 'Linux'
         mode: 'System'
