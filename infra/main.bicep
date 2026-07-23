@@ -1,18 +1,17 @@
 // ========== main.bicep ========== //
 targetScope = 'resourceGroup'
 
-@minLength(3)
+@minLength(0)
 @maxLength(20)
 @description('Required. A unique prefix for all resources in this deployment. This should be 3-20 characters long:')
-param solutionName string = 'kmgs'
+param solutionName string = ''
 
 @description('Optional. Azure location for the solution. If not provided, it defaults to the resource group location.')
 param location string = ''
 
 @maxLength(5)
 @description('Optional. A unique token for the solution. This is used to ensure resource names are unique for global resources. Defaults to a 5-character substring of the unique string generated from the subscription ID, resource group name, and solution name.')
-param solutionUniqueToken string = substring(uniqueString(subscription().id, resourceGroup().name, solutionName), 0, 5)
-
+param solutionUniqueToken string = ''
 var solutionSuffix= toLower(trim(replace(
   replace(
     replace(replace(replace(replace('${solutionName}${solutionUniqueToken}', '-', ''), '_', ''), '.', ''), '/', ''),
@@ -977,7 +976,7 @@ module managedCluster 'br/public:avm/res/container-service/managed-cluster:0.13.
       {
         name: 'agentpool'
         vmSize: 'Standard_D4ds_v5'
-        availabilityZones: [3,2]
+        availabilityZones: []
         count: 2
         osType: 'Linux'
         mode: 'System'
