@@ -12,8 +12,8 @@
   "parameters": {
     "solutionName": {
       "type": "string",
-      "defaultValue": "kmgs",
-      "minLength": 3,
+      "defaultValue": "",
+      "minLength": 0,
       "maxLength": 20,
       "metadata": {
         "description": "Required. A unique prefix for all resources in this deployment. This should be 3-20 characters long:"
