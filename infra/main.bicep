@@ -956,7 +956,6 @@ module managedCluster 'br/public:avm/res/container-service/managed-cluster:0.13.
   name: take('avm.res.container-service.managed-cluster.aks-${solutionSuffix}', 64)
   params: {
     name: 'aks-${solutionSuffix}'
-    nodeResourceGroup: 'AgenticAI'
     location: solutionLocation
     tags: tags
     enableTelemetry: enableTelemetry
